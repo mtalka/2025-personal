@@ -5,6 +5,13 @@ import Nav from "../components/Nav";
 export const Route = createRootRoute({
   component: () => (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <a href="#navigation" className="skip-link">
+        Skip to navigation
+      </a>
+      
       <Nav />
       <Layout />
       <TanStackRouterDevtools position="bottom-left" />
@@ -29,19 +36,15 @@ function Layout() {
   }
   
   return (
-    <>
-      <header className="relative">
-        <div className="mx-auto max-w-4xl px-4 pt-6 sm:px-6 lg:px-8">
-          <h2 className="text-xl antialiased font-semibold text-black/85 ">
+    <main id="main-content" tabIndex={-1} role="main">
+      <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8">
+        <header className="mb-6">
+          <h2 className="text-xl antialiased font-semibold text-black/85">
             {getHeaderText()}
           </h2>
-        </div>
-      </header>
-      <main>
-        <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8">
-          <Outlet />
-        </div>
-      </main>
-    </>
+        </header>
+        <Outlet />
+      </div>
+    </main>
   );
 }

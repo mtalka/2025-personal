@@ -16,3 +16,50 @@ body {
   height: 100%;
   pointer-events: none; 
 }
+
+/* Skip link styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Enhanced focus indicators */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Custom focus styles for specific elements */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove default focus outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* High contrast focus for better visibility */
+@media (prefers-contrast: high) {
+  *:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+  }
+}

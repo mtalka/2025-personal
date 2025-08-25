@@ -19,12 +19,12 @@ function classNames(...classes: string[]) {
 export default function Nav() {
   const router = useRouterState();
   return (
-    <Disclosure as="nav" className="mx-auto max-w-4xl border-b-2">
+    <Disclosure as="nav" id="navigation" className="mx-auto max-w-4xl border-b-2" aria-label="Main navigation">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex w-full items-center justify-between">
             <div className="shrink-0 flex items-start">
-              <h1 className="antialiased font-bold text-2xl leading-none">MARKUS TALKA</h1><span className="text-[0.6rem]">☺</span>
+              <h1 className="antialiased font-bold text-2xl leading-none" aria-label="Site name">MARKUS TALKA</h1><span className="text-[0.6rem]" aria-label="Smiley face">☺</span>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
@@ -50,7 +50,12 @@ export default function Nav() {
           </div>
           <div className="-mr-2 flex md:hidden">
             {/* Mobile menu button */}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:bg-black/5 hover:text-black focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600">
+            <DisclosureButton 
+              className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:bg-black/5 hover:text-black focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle mobile menu"
+            >
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon
@@ -66,7 +71,7 @@ export default function Nav() {
         </div>
       </div>
 
-      <DisclosurePanel className="md:hidden">
+      <DisclosurePanel id="mobile-menu" className="md:hidden">
         <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
           {navigation.map((item) => (
             <DisclosureButton
