@@ -1,15 +1,21 @@
-import EntityList from "./EntityList";
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/education")({
+  component: EducationList,
+});
+
+import EntityList from "../components/EntityList";
 
 const education = [
   {
     entity: "University of Turku",
-    entityColor: "#003366",
+    entityColor: "#004a43",
     grainOpacity: 0.6,
     entries: [
       {
         title: "Master of Science (M.Sc.)",
         description:
-          "Focused on software design, advanced programming techniques, software quality management, software security, privacy, and lean platform business design.",
+          "Focused on software design, advanced programming techniques, software quality management, software security, privacy, and lean platform business design.\n\nThesis:\nStudy of Universal Requirements for a Platformized Augmented Reality Solution for Maintenance Tasks in Heavy Industry",
         durationStart: "2018",
         durationEnd: "2021",
         location: "Turku",
@@ -17,14 +23,14 @@ const education = [
     ],
   },
   {
-    entity: "Turku University of Applied Sciences",
-    entityColor: "#00539B",
+    entity: "Turku Uni. of Applied Sciences",
+    entityColor: "#ffd200",
     grainOpacity: 0.7,
     entries: [
       {
         title: "Bachelor of Engineering (B.Eng.)",
         description:
-          "Specialized in multimedia technology. Covered usability and UI design, product development, programming (Java, databases, algorithms), augmented reality applications, networking (Cisco CCNA 1 & 2), Linux servers, relational databases, open source software, and human-computer interaction.",
+          "Specialized in multimedia technology. Covered usability and UI design, product development, programming (Java, databases, algorithms), augmented reality applications, networking (Cisco CCNA 1 & 2), Linux servers, relational databases, open source software, and human-computer interaction.\n\nThesis:\nDevelopment of augmented reality visualisation solutions",
         durationStart: "2010",
         durationEnd: "2014",
         location: "Turku",
@@ -33,7 +39,7 @@ const education = [
   },
   {
     entity: "Rangsit University",
-    entityColor: "#800000",
+    entityColor: "#d58ad5",
     grainOpacity: 0.5,
     entries: [
       {
@@ -48,7 +54,7 @@ const education = [
   },
   {
     entity: "Liedon lukio",
-    entityColor: "#999966",
+    entityColor: "#dc0c15",
     grainOpacity: 0.8,
     entries: [
       {
