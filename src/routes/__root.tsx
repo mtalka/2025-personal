@@ -1,6 +1,7 @@
 import { createRootRoute, Outlet, useRouterState } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import Nav from "../components/Nav";
+import FAQSchema from "../components/FAQSchema";
 
 export const Route = createRootRoute({
   component: () => (
@@ -12,6 +13,7 @@ export const Route = createRootRoute({
         Skip to navigation
       </a>
       
+      <FAQSchema />
       <Nav />
       <Layout />
       <TanStackRouterDevtools position="bottom-left" />
@@ -24,11 +26,11 @@ function Layout() {
 
   function getHeaderText() {
     switch (router.location.pathname) {
-      case "/":
+      case "/2025-personal/":
         return "WORK EXPERIENCE";
-      case "/education":
+      case "/2025-personal/education":
         return "EDUCATION";
-      case "/about":
+      case "/2025-personal/about":
         return "ABOUT ME";
       default:
         return "";

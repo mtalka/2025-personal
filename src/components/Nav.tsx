@@ -4,7 +4,7 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 
 const navigation = [
   { name: "Work", to: "/" },
@@ -17,14 +17,28 @@ function classNames(...classes: string[]) {
 }
 
 export default function Nav() {
-  const router = useRouterState();
   return (
-    <Disclosure as="nav" id="navigation" className="mx-auto max-w-4xl border-b-2" aria-label="Main navigation">
+    <Disclosure
+      as="nav"
+      id="navigation"
+      className="mx-auto max-w-4xl border-b-2"
+      aria-label="Main navigation"
+    >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex w-full items-center justify-between">
             <div className="shrink-0 flex items-start">
-              <h1 className="antialiased font-bold text-2xl leading-none" aria-label="Site name">MARKUS TALKA</h1><span className="text-[0.6rem]" aria-label="Smiley face">☺</span>
+              <Link to="/">
+                <h1
+                  className="antialiased font-bold text-2xl leading-none"
+                  aria-label="Site name"
+                >
+                  MARKUS TALKA
+                </h1>
+              </Link>
+              <span className="text-[0.6rem]" aria-label="Smiley face">
+                ☺
+              </span>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
@@ -32,13 +46,13 @@ export default function Nav() {
                   <Link
                     key={item.name}
                     to={item.to}
-                    aria-current={
-                      router.location.pathname === item.to ? "page" : undefined
-                    }
+                    activeOptions={{ exact: item.to === "/" }}
+                    activeProps={{
+                      "aria-current": "page",
+                      className: "bg-gray-100 text-black",
+                    }}
                     className={classNames(
-                      router.location.pathname === item.to
-                        ? "bg-gray-100 text-black"
-                        : "text-gray-800 hover:bg-black/5 hover:text-black",
+                      "text-gray-800 hover:bg-black/5 hover:text-black",
                       "px-3 py-2 text-sm test-text font-medium uppercase"
                     )}
                   >
@@ -50,7 +64,7 @@ export default function Nav() {
           </div>
           <div className="-mr-2 flex md:hidden">
             {/* Mobile menu button */}
-            <DisclosureButton 
+            <DisclosureButton
               className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:bg-black/5 hover:text-black focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600"
               aria-expanded="false"
               aria-controls="mobile-menu"
@@ -72,20 +86,20 @@ export default function Nav() {
       </div>
 
       <DisclosurePanel id="mobile-menu" className="md:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+        <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3 flex flex-col items-end">
           {navigation.map((item) => (
             <DisclosureButton
+              as={Link}
               key={item.name}
-              as="a"
-              href={item.to}
-              aria-current={
-                router.location.pathname === item.to ? "page" : undefined
-              }
+              to={item.to}
+              activeOptions={{ exact: item.to === "/" }}
+              activeProps={{
+                "aria-current": "page",
+                className: "bg-gray-100 text-black",
+              }}
               className={classNames(
-                router.location.pathname === item.to
-                  ? "bg-gray-100 text-black"
-                  : "text-gray-800 hover:bg-black/5 hover:text-black",
-                "block rounded-md px-3 py-2 text-base test-text font-medium uppercase"
+                "w-fit text-gray-800 hover:bg-black/5 hover:text-black",
+                "px-3 py-2 text-sm test-text font-medium uppercase"
               )}
             >
               {item.name}
