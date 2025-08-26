@@ -41,7 +41,7 @@ function Layout() {
     <main id="main-content" tabIndex={-1} role="main">
       <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8">
         <header className="mb-6">
-          <h2 className="text-xl antialiased font-semibold text-black/85">
+          <h2 className="text-xl antialiased font-semibold text-black/85 dark:text-stone-100">
             {getHeaderText()}
           </h2>
         </header>

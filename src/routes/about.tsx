@@ -9,7 +9,7 @@ function About() {
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-4 font-light tracking-wide text-justify">
         <p>
-          Hello friend, welcome to my humble website. I am web developer and
+          Welcome to my humble website. My name is Markus Talka. I am web developer and
           software industry professional, residing in Helsinki, Finland. My main
           interests are in front-end development, and user experience, but I
           also enjoy working with back-end technologies, platform development,

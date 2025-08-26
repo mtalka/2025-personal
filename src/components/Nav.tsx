@@ -30,14 +30,15 @@ export default function Nav() {
             <div className="shrink-0 flex items-start">
               <Link to="/">
                 <h1
-                  className="antialiased font-bold text-2xl leading-[0.8]"
+                  className="antialiased font-bold text-2xl leading-[0.8] uppercase dark:normal-case"
                   aria-label="Site name"
                 >
-                  MARKUS TALKA
+                  Markus Talka
                 </h1>
               </Link>
               <span className="text-[0.6rem]" aria-label="Smiley face">
                 <svg
+                  className="dark:invert"
                   width="7"
                   height="8"
                   viewBox="0 0 7 8"
@@ -70,10 +71,11 @@ export default function Nav() {
                     activeOptions={{ exact: item.to === "/" }}
                     activeProps={{
                       "aria-current": "page",
-                      className: "bg-gray-100 text-black",
+                      className:
+                        "bg-gray-100 text-black dark:bg-stone-800 dark:text-stone-100",
                     }}
                     className={classNames(
-                      "text-gray-800 hover:bg-black/5 hover:text-black",
+                      "text-gray-800 hover:bg-black/5 hover:text-black dark:text-stone-100 dark:hover:bg-stone-900 dark:hover:text-white",
                       "px-3 py-2 text-sm test-text font-medium uppercase"
                     )}
                   >
@@ -86,7 +88,7 @@ export default function Nav() {
           <div className="-mr-2 flex md:hidden">
             {/* Mobile menu button */}
             <DisclosureButton
-              className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:bg-black/5 hover:text-black focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600"
+              className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:bg-black/5 hover:text-black dark:text-stone-100 dark:hover:bg-stone-900 dark:hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600"
               aria-expanded="false"
               aria-controls="mobile-menu"
               aria-label="Toggle mobile menu"
@@ -116,10 +118,11 @@ export default function Nav() {
               activeOptions={{ exact: item.to === "/" }}
               activeProps={{
                 "aria-current": "page",
-                className: "bg-gray-100 text-black",
+                className:
+                  "bg-gray-100 text-black dark:bg-stone-800 dark:text-stone-100",
               }}
               className={classNames(
-                "w-fit text-gray-800 hover:bg-black/5 hover:text-black",
+                "w-fit text-gray-800 hover:bg-black/5 hover:text-black dark:text-stone-100 dark:hover:bg-stone-900 dark:hover:text-white  ",
                 "px-3 py-2 text-sm test-text font-medium uppercase"
               )}
             >
