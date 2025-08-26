@@ -30,7 +30,7 @@ export default function Nav() {
             <div className="shrink-0 flex items-start">
               <Link to="/">
                 <h1
-                  className="antialiased font-bold text-2xl leading-none"
+                  className="antialiased font-bold text-2xl leading-[0.8]"
                   aria-label="Site name"
                 >
                   MARKUS TALKA
