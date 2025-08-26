@@ -13,5 +13,4 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: "/2025-personal/",
 });

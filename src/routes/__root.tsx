@@ -26,11 +26,11 @@ function Layout() {
 
   function getHeaderText() {
     switch (router.location.pathname) {
-      case "/2025-personal/":
+      case "/":
         return "WORK EXPERIENCE";
-      case "/2025-personal/education":
+      case "/education":
         return "EDUCATION";
-      case "/2025-personal/about":
+      case "/about":
         return "ABOUT ME";
       default:
         return "";
