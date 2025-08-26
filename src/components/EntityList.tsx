@@ -23,7 +23,7 @@ export default function EntityList({ data }: { data: Entity[] }) {
             <div className="flex min-w-0 gap-x-4 sm:shadow-sm flex-col w-full sm:w-52 h-full">
               <div
                 style={{ background: item.entityColor }}
-                className="grain h-8 relative overflow-hidden uppercase text-xl font-semibold p-2 opacity-95"
+                className="grain h-4 sm:h-8 relative overflow-hidden uppercase text-xl font-semibold p-2 opacity-95"
                 role="banner"
                 aria-label={`${item.entity} section`}
               >
@@ -46,7 +46,7 @@ export default function EntityList({ data }: { data: Entity[] }) {
                 </svg>
               </div>
               <div className="pt-1 px-1 sm:p-2 sm:pb-4">
-                <h2 className="test-text font-semibold uppercase">{item.entity}</h2>
+                <h2 className="test-text font-semibold uppercase mt-2 sm:mt-0">{item.entity}</h2>
                 <p className="text-sm/6 font-medium text-gray-900">
                   {item.entries[item.entries.length - 1].durationStart} -{" "}
                   {item.entries[0].durationEnd}

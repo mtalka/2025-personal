@@ -37,7 +37,28 @@ export default function Nav() {
                 </h1>
               </Link>
               <span className="text-[0.6rem]" aria-label="Smiley face">
-                ☺
+                <svg
+                  width="7"
+                  height="8"
+                  viewBox="0 0 7 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="3.5"
+                    cy="3.5"
+                    r="3.2"
+                    stroke="black"
+                    stroke-width="0.6"
+                  />
+                  <circle cx="2.56576" cy="2.68294" r="0.583333" fill="black" />
+                  <circle cx="4.4349" cy="2.68294" r="0.583333" fill="black" />
+                  <path
+                    d="M1.84375 3.84961V3.84961C2.45898 5.32184 4.53121 5.35925 5.19917 3.91017L5.22708 3.84961"
+                    stroke="black"
+                    stroke-width="0.6"
+                  />
+                </svg>
               </span>
             </div>
             <div className="hidden md:block">
