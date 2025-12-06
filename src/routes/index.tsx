@@ -12,11 +12,19 @@ const experience = [
     grainOpacity: 0.6,
     entries: [
       {
+        title: "Managing Consultant",
+        description:
+          "Full-stack development, IT project leadership, recruiting and sales.",
+        durationStart: "Nov 2025",
+        durationEnd: "Present",
+        location: "Helsinki",
+      },
+      {
         title: "Senior Consultant",
         description:
           "Full-stack development, IT project leadership, and recruiting.",
         durationStart: "Jan 2023",
-        durationEnd: "Present",
+        durationEnd: "Oct 2025",
         location: "Helsinki",
       },
       {
