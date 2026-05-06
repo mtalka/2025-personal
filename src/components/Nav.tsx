@@ -21,7 +21,7 @@ export default function Nav() {
     <Disclosure
       as="nav"
       id="navigation"
-      className="sticky top-0 z-10 border-b-2 bg-white dark:bg-[#161616]"
+      className="sticky top-0 z-10 w-screen border-b-2 bg-white dark:bg-[#161616]"
       aria-label="Main navigation"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

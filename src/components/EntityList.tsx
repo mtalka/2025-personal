@@ -2,12 +2,12 @@ interface Entity {
   entity: string;
   entityColor: string;
   grainOpacity: number;
+  location: string;
   entries: {
     title: string;
     description: string;
     durationStart: string;
     durationEnd: string;
-    location: string;
   }[];
 }
 
@@ -28,7 +28,10 @@ export default function EntityList({ data }: { data: Entity[] }) {
                 aria-label={`${item.entity} section`}
               >
                 <svg
-                  style={{ mixBlendMode: "overlay", opacity: item.grainOpacity }}
+                  style={{
+                    mixBlendMode: "overlay",
+                    opacity: item.grainOpacity,
+                  }}
                   xmlns="http://www.w3.org/2000/svg"
                   className="absolute w-full h-full pointer-events-none"
                   aria-hidden="true"
@@ -46,10 +49,15 @@ export default function EntityList({ data }: { data: Entity[] }) {
                 </svg>
               </div>
               <div className="pt-1 px-1 sm:p-2 sm:pb-4">
-                <h2 className="test-text font-semibold uppercase mt-2 sm:mt-0">{item.entity}</h2>
-                <p className="text-sm/6 font-medium text-gray-900 dark:text-stone-100">
+                <h2 className="test-text font-semibold uppercase mt-2 sm:mt-0">
+                  {item.entity}
+                </h2>
+                <p className="text-sm/6 text-gray-900 dark:text-stone-100">
                   {item.entries[item.entries.length - 1].durationStart} -{" "}
                   {item.entries[0].durationEnd}
+                </p>
+                <p className="text-sm/6 tracking-normal font-semibold text-gray-800 dark:text-stone-200">
+                  {item.location}
                 </p>
               </div>
             </div>
@@ -69,10 +77,9 @@ export default function EntityList({ data }: { data: Entity[] }) {
                     </div>
                   </div>
                   <div className="font-medium shrink-0 flex flex-col items-end">
-                    <p className="text-sm/6 text-gray-900 dark:text-stone-100">
+                    <p className="uppercase text-sm/6 text-gray-900 dark:text-stone-100">
                       {entry.durationStart} - {entry.durationEnd}
                     </p>
-                    <p className="text-sm/6 text-gray-900 dark:text-stone-100">{entry.location}</p>
                   </div>
                 </article>
               ))}
