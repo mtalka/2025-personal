@@ -5,6 +5,8 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
+import { Lightbulb, LightbulbOff } from "lucide-react";
+import { useTheme } from "../hooks/useTheme";
 
 const navigation = [
   { name: "Work", to: "/" },
@@ -14,6 +16,23 @@ const navigation = [
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
+}
+
+function ThemeToggle({ className }: { className?: string }) {
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
+  return (
+    <button
+      onClick={toggleTheme}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      className={classNames(
+        "cursor-pointer rounded-md p-2 text-gray-800 hover:bg-black/5 hover:text-black dark:text-stone-100 dark:hover:bg-stone-900 dark:hover:text-white transition-colors",
+        className ?? ""
+      )}
+    >
+      {isDark ? <Lightbulb size={18} /> : <LightbulbOff size={18} />}
+    </button>
+  );
 }
 
 export default function Nav() {
@@ -62,31 +81,30 @@ export default function Nav() {
                 </svg>
               </span>
             </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.to}
-                    activeOptions={{ exact: item.to === "/" }}
-                    activeProps={{
-                      "aria-current": "page",
-                      className:
-                        "bg-gray-100 text-black dark:bg-stone-800 dark:text-stone-100",
-                    }}
-                    className={classNames(
-                      "text-gray-800 hover:bg-black/5 hover:text-black dark:text-stone-100 dark:hover:bg-stone-900 dark:hover:text-white",
-                      "px-3 py-2 text-sm test-text font-medium uppercase"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
+            <div className="hidden md:flex items-center ml-10 space-x-1">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.to}
+                  activeOptions={{ exact: item.to === "/" }}
+                  activeProps={{
+                    "aria-current": "page",
+                    className:
+                      "bg-gray-100 text-black dark:bg-stone-800 dark:text-stone-100",
+                  }}
+                  className={classNames(
+                    "text-gray-800 hover:bg-black/5 hover:text-black dark:text-stone-100 dark:hover:bg-stone-900 dark:hover:text-white",
+                    "px-3 py-2 text-sm test-text font-medium uppercase"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <ThemeToggle />
             </div>
           </div>
-          <div className="-mr-2 flex md:hidden">
-            {/* Mobile menu button */}
+          <div className="-mr-2 flex items-center gap-1 md:hidden">
+            <ThemeToggle />
             <DisclosureButton
               className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:bg-black/5 hover:text-black dark:text-stone-100 dark:hover:bg-stone-900 dark:hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600"
               aria-expanded="false"
@@ -122,7 +140,7 @@ export default function Nav() {
                   "bg-gray-100 text-black dark:bg-stone-800 dark:text-stone-100",
               }}
               className={classNames(
-                "w-fit text-gray-800 hover:bg-black/5 hover:text-black dark:text-stone-100 dark:hover:bg-stone-900 dark:hover:text-white  ",
+                "w-fit text-gray-800 hover:bg-black/5 hover:text-black dark:text-stone-100 dark:hover:bg-stone-900 dark:hover:text-white",
                 "px-3 py-2 text-sm test-text font-medium uppercase"
               )}
             >
