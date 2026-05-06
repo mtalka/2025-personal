@@ -12,6 +12,10 @@
   }
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: "neue-haas-grotesk-display", sans-serif;
   color: var(--foreground-color);
